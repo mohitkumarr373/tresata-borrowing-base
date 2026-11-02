@@ -1,0 +1,18 @@
+{
+  "python": "3.12.14",
+  "platform": "Linux-6.18.57-x86_64-with-glibc2.39",
+  "processor": "x86_64",
+  "scope": "Pure engine; excludes IO, source validation, PDF/OCR, network and UI",
+  "results": {
+    "invoices": 100000,
+    "debtors": 2000,
+    "repeats": 3,
+    "seconds": [
+      0.4136564060004275,
+      0.39985722599976725,
+      0.3962920000003578
+    ],
+    "median_seconds": 0.39985722599976725,
+    "invoices_per_second": 250089
+  }
+}

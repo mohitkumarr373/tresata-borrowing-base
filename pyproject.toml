@@ -1,0 +1,22 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "tresata-borrowcheck"
+version = "1.0.0"
+description = "Evidence-linked receivables borrowing-base reconciliation"
+readme = "README.md"
+requires-python = ">=3.11"
+license = {text = "MIT"}
+authors = [{name = "Mohit Kumar"}]
+dependencies = []
+
+[project.scripts]
+borrowcheck = "borrowcheck.cli:main"
+
+[tool.setuptools.packages.find]
+include = ["borrowcheck*"]
+
+[tool.setuptools.package-data]
+borrowcheck = ["static/*"]

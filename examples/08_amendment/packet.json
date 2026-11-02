@@ -1,0 +1,309 @@
+{
+  "schema_version": 1,
+  "synthetic": true,
+  "facility_id": "SYN-001",
+  "name": "Effective-date amendment",
+  "as_of": "2026-11-01",
+  "knowledge_as_of": "2026-11-02",
+  "currency": "USD",
+  "documents": [
+    {
+      "id": "agreement",
+      "file": "agreement.txt",
+      "sha256": "9ce96baed37134b1d00159225c9e665588d96a714688e860afad1e22fe574fca"
+    },
+    {
+      "id": "reserve",
+      "file": "reserve.txt",
+      "sha256": "2e3dc72d574b5e77f9bf52fb0f96c6b75ada8cfd39b929accb0730b9405c6d90"
+    },
+    {
+      "id": "certificate",
+      "file": "certificate.txt",
+      "sha256": "5f493a79fb700f4cd98a813e7e0c6cea11239a9305896548a88593da01236275"
+    },
+    {
+      "id": "amendment",
+      "file": "amendment.txt",
+      "sha256": "a275262d39fc7c38e7c48c8f4e56bcef0d1d2777bb42c2656e1684f7322f1ad8"
+    }
+  ],
+  "ledger": "ledger.csv",
+  "ledger_sha256": "96fb38f50f59cfb2378a2ae3d6d485405c5e85acc00d350c241a6aef15a933f6",
+  "control_totals": {
+    "invoice_count": 8,
+    "gross": "1000000.00"
+  },
+  "attestations": {
+    "manifest_complete": true,
+    "legal_eligibility": true,
+    "debtor_identity": true,
+    "reviewer": "Synthetic fixture reviewer",
+    "kind": "SYNTHETIC_FIXTURE"
+  },
+  "rule_versions": [
+    {
+      "id": "SYN-001-v1",
+      "facility_id": "SYN-001",
+      "effective_from": "2026-01-01",
+      "effective_to": "2026-10-31",
+      "recorded_on": "2026-10-01",
+      "parameters": {
+        "age_days": 90,
+        "cross_age_bp": 5000,
+        "concentration_bp": 2000,
+        "advance_bp": 8000
+      },
+      "mechanics": {
+        "age_comparison": "GT",
+        "cross_age_comparison": "GTE",
+        "cross_age_denominator": "NET_BEFORE_ELIGIBILITY",
+        "concentration_denominator": "POST_ELIGIBILITY_PRE_CONCENTRATION",
+        "rounding": "FLOOR_CENTS",
+        "dispute_policy": "EXCLUDE_FULL_INVOICE"
+      },
+      "evidence": {
+        "age_days": {
+          "document_id": "agreement",
+          "document_sha256": "9ce96baed37134b1d00159225c9e665588d96a714688e860afad1e22fe574fca",
+          "text_sha256": "9ce96baed37134b1d00159225c9e665588d96a714688e860afad1e22fe574fca",
+          "clause": "Section 2",
+          "start": 256,
+          "end": 414,
+          "offset_unit": "unicode_codepoints",
+          "start_line": 5,
+          "end_line": 5,
+          "quote": "Section 2. Ageing. An invoice is ineligible when it remains unpaid more than 90 calendar days after its original invoice date, measured at the reporting date.",
+          "coordinates": []
+        },
+        "cross_age_bp": {
+          "document_id": "agreement",
+          "document_sha256": "9ce96baed37134b1d00159225c9e665588d96a714688e860afad1e22fe574fca",
+          "text_sha256": "9ce96baed37134b1d00159225c9e665588d96a714688e860afad1e22fe574fca",
+          "clause": "Section 3",
+          "start": 416,
+          "end": 631,
+          "offset_unit": "unicode_codepoints",
+          "start_line": 7,
+          "end_line": 7,
+          "quote": "Section 3. Cross-ageing. If at least 50.00 percent of a debtor's net balance is overdue under Section 2, all of that debtor's receivables are ineligible. The denominator is net balance before eligibility deductions.",
+          "coordinates": []
+        },
+        "concentration_bp": {
+          "document_id": "agreement",
+          "document_sha256": "9ce96baed37134b1d00159225c9e665588d96a714688e860afad1e22fe574fca",
+          "text_sha256": "9ce96baed37134b1d00159225c9e665588d96a714688e860afad1e22fe574fca",
+          "clause": "Section 4",
+          "start": 633,
+          "end": 854,
+          "offset_unit": "unicode_codepoints",
+          "start_line": 9,
+          "end_line": 9,
+          "quote": "Section 4. Concentration. Each debtor is limited to 20.00 percent of the aggregate eligible pool after eligibility exclusions and before concentration deductions. This denominator is fixed; no iterative recapping applies.",
+          "coordinates": []
+        },
+        "advance_bp": {
+          "document_id": "agreement",
+          "document_sha256": "9ce96baed37134b1d00159225c9e665588d96a714688e860afad1e22fe574fca",
+          "text_sha256": "9ce96baed37134b1d00159225c9e665588d96a714688e860afad1e22fe574fca",
+          "clause": "Section 5",
+          "start": 856,
+          "end": 980,
+          "offset_unit": "unicode_codepoints",
+          "start_line": 11,
+          "end_line": 11,
+          "quote": "Section 5. Advance. Apply an advance rate of 80.00 percent to the eligible balance remaining after concentration deductions.",
+          "coordinates": []
+        },
+        "mechanics": {
+          "document_id": "agreement",
+          "document_sha256": "9ce96baed37134b1d00159225c9e665588d96a714688e860afad1e22fe574fca",
+          "text_sha256": "9ce96baed37134b1d00159225c9e665588d96a714688e860afad1e22fe574fca",
+          "clause": "Section 6",
+          "start": 982,
+          "end": 1362,
+          "offset_unit": "unicode_codepoints",
+          "start_line": 13,
+          "end_line": 13,
+          "quote": "Section 6. Ordering and rounding. Allocate credits to invoices first, apply age and dispute exclusions, apply debtor cross-ageing, then concentration, advance, reserve, zero floor, and commitment cap. Disputed invoices are excluded in full. Count each excluded dollar once. Round each debtor's cap and the aggregate advance down to whole cents. Unallocated credits require review.",
+          "coordinates": []
+        },
+        "scope": {
+          "document_id": "agreement",
+          "document_sha256": "9ce96baed37134b1d00159225c9e665588d96a714688e860afad1e22fe574fca",
+          "text_sha256": "9ce96baed37134b1d00159225c9e665588d96a714688e860afad1e22fe574fca",
+          "clause": "Section 1",
+          "start": 60,
+          "end": 254,
+          "offset_unit": "unicode_codepoints",
+          "start_line": 3,
+          "end_line": 3,
+          "quote": "Section 1. Scope. This synthetic facility covers only domestic USD trade receivables. A reviewer must confirm legal eligibility and debtor identity. No inventory or foreign currency is admitted.",
+          "coordinates": []
+        }
+      },
+      "approval": {
+        "reviewer": "Synthetic fixture reviewer",
+        "kind": "SYNTHETIC_FIXTURE",
+        "payload_sha256": "fefab8bae74d4f1e26b35bf96835845377222b41a9f7c87e3bcb6798b1759a45"
+      }
+    },
+    {
+      "id": "SYN-001-v2",
+      "facility_id": "SYN-001",
+      "effective_from": "2026-11-01",
+      "effective_to": null,
+      "recorded_on": "2026-10-30",
+      "parameters": {
+        "age_days": 90,
+        "cross_age_bp": 5000,
+        "concentration_bp": 2500,
+        "advance_bp": 8000
+      },
+      "mechanics": {
+        "age_comparison": "GT",
+        "cross_age_comparison": "GTE",
+        "cross_age_denominator": "NET_BEFORE_ELIGIBILITY",
+        "concentration_denominator": "POST_ELIGIBILITY_PRE_CONCENTRATION",
+        "rounding": "FLOOR_CENTS",
+        "dispute_policy": "EXCLUDE_FULL_INVOICE"
+      },
+      "evidence": {
+        "age_days": {
+          "document_id": "agreement",
+          "document_sha256": "9ce96baed37134b1d00159225c9e665588d96a714688e860afad1e22fe574fca",
+          "text_sha256": "9ce96baed37134b1d00159225c9e665588d96a714688e860afad1e22fe574fca",
+          "clause": "Section 2",
+          "start": 256,
+          "end": 414,
+          "offset_unit": "unicode_codepoints",
+          "start_line": 5,
+          "end_line": 5,
+          "quote": "Section 2. Ageing. An invoice is ineligible when it remains unpaid more than 90 calendar days after its original invoice date, measured at the reporting date.",
+          "coordinates": []
+        },
+        "cross_age_bp": {
+          "document_id": "agreement",
+          "document_sha256": "9ce96baed37134b1d00159225c9e665588d96a714688e860afad1e22fe574fca",
+          "text_sha256": "9ce96baed37134b1d00159225c9e665588d96a714688e860afad1e22fe574fca",
+          "clause": "Section 3",
+          "start": 416,
+          "end": 631,
+          "offset_unit": "unicode_codepoints",
+          "start_line": 7,
+          "end_line": 7,
+          "quote": "Section 3. Cross-ageing. If at least 50.00 percent of a debtor's net balance is overdue under Section 2, all of that debtor's receivables are ineligible. The denominator is net balance before eligibility deductions.",
+          "coordinates": []
+        },
+        "concentration_bp": {
+          "document_id": "amendment",
+          "document_sha256": "a275262d39fc7c38e7c48c8f4e56bcef0d1d2777bb42c2656e1684f7322f1ad8",
+          "text_sha256": "a275262d39fc7c38e7c48c8f4e56bcef0d1d2777bb42c2656e1684f7322f1ad8",
+          "clause": "A-001",
+          "start": 0,
+          "end": 203,
+          "offset_unit": "unicode_codepoints",
+          "start_line": 1,
+          "end_line": 1,
+          "quote": "Synthetic executed amendment A-001. Effective 2026-11-01, Section 4's concentration limit changes to 25.00 percent of the same pre-concentration eligible pool. All other synthetic terms remain unchanged.",
+          "coordinates": []
+        },
+        "advance_bp": {
+          "document_id": "agreement",
+          "document_sha256": "9ce96baed37134b1d00159225c9e665588d96a714688e860afad1e22fe574fca",
+          "text_sha256": "9ce96baed37134b1d00159225c9e665588d96a714688e860afad1e22fe574fca",
+          "clause": "Section 5",
+          "start": 856,
+          "end": 980,
+          "offset_unit": "unicode_codepoints",
+          "start_line": 11,
+          "end_line": 11,
+          "quote": "Section 5. Advance. Apply an advance rate of 80.00 percent to the eligible balance remaining after concentration deductions.",
+          "coordinates": []
+        },
+        "mechanics": {
+          "document_id": "agreement",
+          "document_sha256": "9ce96baed37134b1d00159225c9e665588d96a714688e860afad1e22fe574fca",
+          "text_sha256": "9ce96baed37134b1d00159225c9e665588d96a714688e860afad1e22fe574fca",
+          "clause": "Section 6",
+          "start": 982,
+          "end": 1362,
+          "offset_unit": "unicode_codepoints",
+          "start_line": 13,
+          "end_line": 13,
+          "quote": "Section 6. Ordering and rounding. Allocate credits to invoices first, apply age and dispute exclusions, apply debtor cross-ageing, then concentration, advance, reserve, zero floor, and commitment cap. Disputed invoices are excluded in full. Count each excluded dollar once. Round each debtor's cap and the aggregate advance down to whole cents. Unallocated credits require review.",
+          "coordinates": []
+        },
+        "scope": {
+          "document_id": "agreement",
+          "document_sha256": "9ce96baed37134b1d00159225c9e665588d96a714688e860afad1e22fe574fca",
+          "text_sha256": "9ce96baed37134b1d00159225c9e665588d96a714688e860afad1e22fe574fca",
+          "clause": "Section 1",
+          "start": 60,
+          "end": 254,
+          "offset_unit": "unicode_codepoints",
+          "start_line": 3,
+          "end_line": 3,
+          "quote": "Section 1. Scope. This synthetic facility covers only domestic USD trade receivables. A reviewer must confirm legal eligibility and debtor identity. No inventory or foreign currency is admitted.",
+          "coordinates": []
+        }
+      },
+      "approval": {
+        "reviewer": "Synthetic fixture reviewer",
+        "kind": "SYNTHETIC_FIXTURE",
+        "payload_sha256": "ac6bb16ae9b55dc602756bea599747403a616299edc55ebfc3abf8f87fb76d95"
+      }
+    }
+  ],
+  "reserve": {
+    "amount": "50000.00",
+    "confirmed": true,
+    "valid_from": "2026-10-01",
+    "valid_to": "2026-11-30",
+    "evidence": {
+      "document_id": "reserve",
+      "document_sha256": "2e3dc72d574b5e77f9bf52fb0f96c6b75ada8cfd39b929accb0730b9405c6d90",
+      "text_sha256": "2e3dc72d574b5e77f9bf52fb0f96c6b75ada8cfd39b929accb0730b9405c6d90",
+      "clause": "R-001",
+      "start": 0,
+      "end": 181,
+      "offset_unit": "unicode_codepoints",
+      "start_line": 1,
+      "end_line": 1,
+      "quote": "Synthetic lender notice R-001. A reserve of USD 50000.00 is confirmed for reporting dates from 2026-10-01 through 2026-11-30, inclusive. This confirmation does not authorize a loan.",
+      "coordinates": []
+    }
+  },
+  "commitment": {
+    "amount": "1000000.00",
+    "evidence": {
+      "document_id": "agreement",
+      "document_sha256": "9ce96baed37134b1d00159225c9e665588d96a714688e860afad1e22fe574fca",
+      "text_sha256": "9ce96baed37134b1d00159225c9e665588d96a714688e860afad1e22fe574fca",
+      "clause": "Section 7",
+      "start": 1364,
+      "end": 1571,
+      "offset_unit": "unicode_codepoints",
+      "start_line": 15,
+      "end_line": 15,
+      "quote": "Section 7. Commitment. The commitment limit is USD 1000000.00. The borrowing base equals the lesser of this commitment and the non-negative advanced amount after reserves. It is not available-to-draw credit.",
+      "coordinates": []
+    }
+  },
+  "certificate": {
+    "reported": "574000.00",
+    "evidence": {
+      "document_id": "certificate",
+      "document_sha256": "5f493a79fb700f4cd98a813e7e0c6cea11239a9305896548a88593da01236275",
+      "text_sha256": "5f493a79fb700f4cd98a813e7e0c6cea11239a9305896548a88593da01236275",
+      "clause": "Certificate",
+      "start": 0,
+      "end": 112,
+      "offset_unit": "unicode_codepoints",
+      "start_line": 1,
+      "end_line": 1,
+      "quote": "Synthetic borrower certificate. Reported borrowing base: USD 574000.00. Reporting figures require lender review.",
+      "coordinates": []
+    }
+  }
+}

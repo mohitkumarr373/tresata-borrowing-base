@@ -1,0 +1,3 @@
+invoice_id,debtor_id,debtor_name,invoice_date,currency,amount,credit,disputed
+ALIAS-1,,Customer unresolved,2026-10-01,USD,150000.00,0.00,false
+ALIAS-2,,Customer unresolved,2026-10-01,USD,150000.00,0.00,false

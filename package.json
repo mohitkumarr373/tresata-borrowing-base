@@ -1,0 +1,8 @@
+{
+  "name": "borrowcheck-ui-verification",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Optional browser smoke checks; the application itself needs only Python",
+  "scripts": {"test:ui": "node tools/ui_smoke.cjs"},
+  "devDependencies": {"playwright": "1.62.1"}
+}

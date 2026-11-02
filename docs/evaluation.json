@@ -1,0 +1,156 @@
+{
+  "suite": "ten-synthetic-acceptance-cases",
+  "passed": 10,
+  "total": 10,
+  "live_llm_evaluated": false,
+  "results": [
+    {
+      "id": "01_clean",
+      "name": "Clean receivables",
+      "passed": true,
+      "expected": {
+        "status": "READY_FOR_REVIEW",
+        "base": "750000.00"
+      },
+      "actual": {
+        "status": "READY_FOR_REVIEW",
+        "base": "750000.00"
+      },
+      "blockers": []
+    },
+    {
+      "id": "02_age_boundary",
+      "name": "90 / 91 day boundary",
+      "passed": true,
+      "expected": {
+        "status": "READY_FOR_REVIEW",
+        "base": "350000.00"
+      },
+      "actual": {
+        "status": "READY_FOR_REVIEW",
+        "base": "350000.00"
+      },
+      "blockers": []
+    },
+    {
+      "id": "03_cross_age",
+      "name": "49% / 50% cross-age boundary",
+      "passed": true,
+      "expected": {
+        "status": "READY_FOR_REVIEW",
+        "base": "390800.00"
+      },
+      "actual": {
+        "status": "READY_FOR_REVIEW",
+        "base": "390800.00"
+      },
+      "blockers": []
+    },
+    {
+      "id": "04_worked",
+      "name": "The $96,000 discrepancy",
+      "passed": true,
+      "expected": {
+        "status": "READY_FOR_REVIEW",
+        "base": "478000.00",
+        "variance": "96000.00"
+      },
+      "actual": {
+        "status": "READY_FOR_REVIEW",
+        "base": "478000.00",
+        "variance": "96000.00"
+      },
+      "blockers": []
+    },
+    {
+      "id": "05_overlap",
+      "name": "Overlapping exclusion reasons",
+      "passed": true,
+      "expected": {
+        "status": "READY_FOR_REVIEW",
+        "base": "478000.00"
+      },
+      "actual": {
+        "status": "READY_FOR_REVIEW",
+        "base": "478000.00"
+      },
+      "blockers": []
+    },
+    {
+      "id": "06_credit",
+      "name": "Allocated credit note",
+      "passed": true,
+      "expected": {
+        "status": "READY_FOR_REVIEW",
+        "base": "328400.00"
+      },
+      "actual": {
+        "status": "READY_FOR_REVIEW",
+        "base": "328400.00"
+      },
+      "blockers": []
+    },
+    {
+      "id": "07_alias",
+      "name": "Unresolved debtor identity",
+      "passed": true,
+      "expected": {
+        "status": "BLOCKED",
+        "base": null
+      },
+      "actual": {
+        "status": "BLOCKED",
+        "base": null
+      },
+      "blockers": [
+        "Duplicate invoice or missing invoice/debtor identity"
+      ]
+    },
+    {
+      "id": "08_amendment",
+      "name": "Effective-date amendment",
+      "passed": true,
+      "expected": {
+        "status": "READY_FOR_REVIEW",
+        "base": "510000.00"
+      },
+      "actual": {
+        "status": "READY_FOR_REVIEW",
+        "base": "510000.00"
+      },
+      "blockers": []
+    },
+    {
+      "id": "09_missing_reserve",
+      "name": "Reserve not confirmed",
+      "passed": true,
+      "expected": {
+        "status": "BLOCKED",
+        "base": null
+      },
+      "actual": {
+        "status": "BLOCKED",
+        "base": null
+      },
+      "blockers": [
+        "RESERVE_UNCONFIRMED: missing reserve is not zero"
+      ]
+    },
+    {
+      "id": "10_hostile",
+      "name": "Untrusted document instruction",
+      "passed": true,
+      "expected": {
+        "status": "BLOCKED",
+        "base": null
+      },
+      "actual": {
+        "status": "BLOCKED",
+        "base": null
+      },
+      "blockers": [
+        "SOURCE_QUARANTINED: suspicious instruction in agreement; manual source review required"
+      ]
+    }
+  ]
+}

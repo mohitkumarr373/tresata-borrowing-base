@@ -1,0 +1,7 @@
+invoice_id,debtor_id,debtor_name,invoice_date,currency,amount,credit,disputed
+AGE-90,A,Customer A,2026-08-02,USD,100000.00,0.00,false
+AGE-91,B,Customer B,2026-08-01,USD,100000.00,0.00,false
+C-1,C,Customer C,2026-10-01,USD,100000.00,0.00,false
+D-1,D,Customer D,2026-10-01,USD,100000.00,0.00,false
+E-1,E,Customer E,2026-10-01,USD,100000.00,0.00,false
+F-1,F,Customer F,2026-10-01,USD,100000.00,0.00,false

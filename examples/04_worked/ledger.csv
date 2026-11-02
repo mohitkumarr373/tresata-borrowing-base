@@ -1,0 +1,9 @@
+invoice_id,debtor_id,debtor_name,invoice_date,currency,amount,credit,disputed
+A-OLD,A,Customer A,2026-07-03,USD,100000.00,0.00,false
+A-CURRENT,A,Customer A,2026-10-01,USD,100000.00,0.00,false
+B-001,B,Customer B,2026-10-01,USD,300000.00,0.00,false
+C-001,C,Customer C,2026-10-01,USD,100000.00,0.00,false
+D-001,D,Customer D,2026-10-01,USD,100000.00,0.00,false
+E-001,E,Customer E,2026-10-01,USD,100000.00,0.00,false
+F-001,F,Customer F,2026-10-01,USD,100000.00,0.00,false
+G-001,G,Customer G,2026-10-01,USD,100000.00,0.00,false
